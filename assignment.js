@@ -1,5 +1,3 @@
-// -------------------------1-------------
-
 function cubeNumber(number) {
     if (typeof number === 'number') {
         const result = number * number * number;
@@ -8,7 +6,9 @@ function cubeNumber(number) {
         return "Please provide a positive number.";
     }
 }
-// -----------------------------------2----------------------------
+
+
+
 function matchFinder(string1, string2) {
     if (typeof string1 !== 'string' || typeof string2 !== 'string') {
       return "Both inputs must be strings.";
@@ -20,8 +20,9 @@ function matchFinder(string1, string2) {
       return false;
     }
   }
+
+
   
-// ------------------3--------------------
 function sortMaker(arr) {
     if (arr.length !== 2) {
         return ("Array must have exactly two elements.");
@@ -41,7 +42,7 @@ function sortMaker(arr) {
     }
 }
 
-// -------------------4---------------------
+
 
 function findAddress(obj) {
     if (typeof obj === 'object' && obj !== null) {
@@ -61,7 +62,23 @@ const object = {
     house: '15A',
     society: 'Earth Perfect'
 };
-// console.log(findAddress({street:10 }));
 
-// -------------------------5------------------------
 
+
+function canPay(changeArray, totalDue) {
+    if (changeArray.length === 0 || (Array.isArray(changeArray[0]) && changeArray[0].length === 0)) {
+        return false;
+    }
+
+    let sumOfChange = 0;
+
+    for (let i = 0; i < changeArray.length; i++) {
+        sumOfChange = sumOfChange + changeArray[i];
+    }
+
+    if (sumOfChange < totalDue) {
+        return false;
+    }else{
+        return true;
+    }
+}
