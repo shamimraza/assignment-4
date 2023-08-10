@@ -8,21 +8,19 @@ function cubeNumber(number) {
 }
 
 
-
 function matchFinder(string1, string2) {
     if (typeof string1 !== 'string' || typeof string2 !== 'string') {
-      return "Both inputs must be strings.";
+        return "Both inputs must be strings.";
     }
-  
+
     if (string1.includes(string2)) {
-      return true;
+        return true;
     } else {
-      return false;
+        return false;
     }
-  }
+}
 
 
-  
 function sortMaker(arr) {
     if (arr.length !== 2) {
         return ("Array must have exactly two elements.");
@@ -43,26 +41,20 @@ function sortMaker(arr) {
 }
 
 
-
 function findAddress(obj) {
-    if (typeof obj === 'object' && obj !== null) {
-        const street = obj.street || '__';
-        const house = obj.house || '__';
-        const society = obj.society || '__';
+    const defaultAddress = {
+        street: "__",
+        house: "__",
+        society: "__"
+    };
 
-        const address = `${street}, ${house}, ${society}`;
-        return address;
-    } else {
-        return 'Input must be a valid object.';
-    }
+    const mergedAddress = { ...defaultAddress, ...obj };
+
+    const addressArray = [mergedAddress.street, mergedAddress.house, mergedAddress.society];
+    const formattedAddress = addressArray.join(',');
+
+    return formattedAddress;
 }
-
-const object = {
-    street: 10,
-    house: '15A',
-    society: 'Earth Perfect'
-};
-
 
 
 function canPay(changeArray, totalDue) {
@@ -78,7 +70,7 @@ function canPay(changeArray, totalDue) {
 
     if (sumOfChange < totalDue) {
         return false;
-    }else{
+    } else {
         return true;
     }
 }
